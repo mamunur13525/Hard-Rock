@@ -100,16 +100,20 @@
     <script>
 
         document.getElementById('searchBtn').addEventListener('click', function(){   
-                                          dataCleare('lyricss-title');
-                                        dataCleare('lyricss-append');
-                                        function dataCleare(idName){
-                                            let element = document.getElementById(idName);
-                                            while (element.firstChild) {
-                                                element.removeChild(element.firstChild);
-                                            }
-                                        }
+                    dataCleare('lyricss-title');
+                    dataCleare('lyricss-append');
+                    function dataCleare(idName){
+                        let element = document.getElementById(idName);
+                        while (element.firstChild) {
+                            element.removeChild(element.firstChild);
+                                }
+                        }
+                        const searchValue = document.getElementById('searchValue').value;
+                   if(searchValue == ""){
+                    alert('pleace input value');
+                   }else{
 
-            const searchValue = document.getElementById('searchValue').value;
+                 
             let element = document.getElementById("none");
                 while (element.firstChild) {
                      element.removeChild(element.firstChild);
@@ -193,8 +197,7 @@
                                         }
                                        
                                           
-                                       if(data.error){
-                                         
+                                       if(data.error){   
                                            document.getElementById('lyricss-title').innerText = "Lyricss Not Found";
                                        }else{
                                         const lyrics = data.lyrics;
@@ -204,7 +207,10 @@
                                        }
                                     })
                                  }
-                            })              
+                            })   
+
+
+                   }
 
         })
         
